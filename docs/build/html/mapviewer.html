@@ -1,0 +1,163 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Built-in Viewer &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Optional Config Files" href="optconfig.html" />
+    <link rel="prev" title="Command Line Options" href="commandline.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="optconfig.html" title="Optional Config Files"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="commandline.html" title="Command Line Options"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="commandline.html"
+                        title="previous chapter">Command Line Options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="optconfig.html"
+                        title="next chapter">Optional Config Files</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mapviewer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<style> .bluebold {color:#0000CC; background-color:#DDDDDD; font-weight:bold; text-align:center;} </style><div class="section" id="built-in-viewer">
+<span id="viewer-label"></span><h1>Built-in Viewer<a class="headerlink" href="#built-in-viewer" title="Permalink to this headline">¶</a></h1>
+<p>stdf2map contains a wxPython based built-in mapviewer. It's a simple viewer, but it can be made aware of all your map directories, so you can move around and look at maps very quickly.</p>
+<p>The first time you run it, it will save some settings in <strong>conf/mapviewer.config</strong> (window location, size, current directory, splitter position, etc)</p>
+<p>To launch the viewer, simply include the <strong>-v</strong> option on the command line, i.e.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -v a595
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can run the viewer in standalone mode without creating a map simply by using <strong>stdf2map -v</strong>.  In fact, you may want to create an alias for just that purpose (i.e. in linux bash shell <strong>alias mapviewer=&quot;stdf2map -v&quot;</strong>)</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><span class="bluebold">Windows Screenshot</span></p>
+<img alt="_images/win-viewer.png" src="_images/win-viewer.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Launching the viewer after map creation is a modal event.</p>
+<p class="last">If you are processing several files at once, it will stop after the first one, show the map, and wait for you to close the window before proceeding to the next file.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>It looks a little bit different between Windows (above) and Linux (below).</p>
+<p><span class="bluebold">Linux Screenshot</span></p>
+<img alt="_images/linux-viewer.png" src="_images/linux-viewer.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Hopefully the viewer is intuitive enough that instructions aren't really needed, but here's an annotated version for the sake of completeness.</p>
+<img alt="_images/win-viewer-ann.png" src="_images/win-viewer-ann.png" />
+<p>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="optconfig.html" title="Optional Config Files"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="commandline.html" title="Command Line Options"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

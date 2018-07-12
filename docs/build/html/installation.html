@@ -1,0 +1,194 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Basic Usage" href="basics.html" />
+    <link rel="prev" title="Intro" href="intro.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="basics.html" title="Basic Usage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Intro"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependancies">Dependancies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">Intro</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="basics.html"
+                        title="next chapter">Basic Usage</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul>
+<li><p class="first">Unpack</p>
+</li>
+<li><p class="first">Decide where you want to store configuration files</p>
+</li>
+<li><p class="first">Edit <em>config.py</em> (read the comments near the top of the file) and set <strong>_config_path=</strong>. A default configuration file will be created in the directory you select the first time you run the application.</p>
+</li>
+<li><p class="first">Copy all of the files from the distribution <strong>conf/</strong> directory to the location used in the above step.</p>
+</li>
+<li><p class="first">run <strong>python setup.py install</strong> (or <strong>sudo python setup.py install</strong> on Linux with privs)</p>
+</li>
+<li><p class="first">the setup file should install an executable in your python's <strong>script</strong> directory.  If your python path is set up correctly, you should be able to run the application with the command: <strong>stdf2map</strong></p>
+</li>
+<li><p class="first">try <strong>stdf2map -a</strong>  and you should get a NOTE about generating a default config file and then a list of command-line options</p>
+</li>
+<li><p class="first">assuming that worked, you should now have a default config file in the directory you chose above, change to that directory and edit the config file (should be <strong>stdf2map.config</strong> (or may be <strong>stdf2map-script.config</strong> on Windows)</p>
+</li>
+<li><p class="first">Set/check the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>map_path</strong>  <em>(default base directory for maps when -o command line option not used)</em></li>
+<li><strong>stdf_path</strong> <em>(default location for stdf file input)</em></li>
+<li><strong>logfile</strong> <em>(full path with filename)</em></li>
+<li><strong>logfile_size</strong>  <em>(May leave at default)</em></li>
+<li><strong>logfile_rotates</strong> <em>(May leave at default)</em></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please ensure you have the proper read/write privileges for the directories you select</p>
+</div>
+<ul class="simple">
+<li>if you typically use <strong>sbin</strong> instead of <strong>hbin</strong> in your STDF files, set <strong>binmap='sbin'</strong> as the default (many fabs populate both with the same bin number, so it may not make a difference to you), plus you can always select one or the other from the command line with the <strong>-b</strong> option.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">all other options can stay the same until you get a feel for things... <strong>save the file</strong></p>
+</li>
+<li><p class="first"><strong>Optional</strong> - Copy the stdf sample files from the distribution <strong>stdf</strong> directory to <strong>stdf_path</strong> you set above. (Otherwise, you will need to change to the stdf directory to execute the example commands in this documentation)</p>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="dependancies">
+<h2>Dependancies<a class="headerlink" href="#dependancies" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>PIL (pillow)</strong> - graphical routines / image saving</li>
+<li><strong>toml</strong> - reading config files</li>
+<li><strong>wxPython</strong> - built-in map viewer</li>
+</ul>
+</div></blockquote>
+<p>Currently set up to use truetype fonts, specifically <strong>Arial</strong> and <strong>Arialbd</strong>.  I have not tested it with other fonts or types (although they <em>should</em> (may?) be supported)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Linux users may need to install <strong>Arial</strong> and <strong>Arialbd</strong></p>
+<p class="last">Not all Linux systems have truetype fonts installed by default.  There are several methods to install them, and the easiest method may vary by distro.  Consult your favorite search engine if you are not sure how to get them installed.  For Ubuntu, here's a link that should help: <a class="reference external" href="https://www.ostechnix.com/install-microsoft-windows-fonts-ubuntu-16-04/">https://www.ostechnix.com/install-microsoft-windows-fonts-ubuntu-16-04/</a></p>
+</div>
+<p>Setup.py should take care of installing <strong>PIL</strong> and <strong>toml</strong> if you don't already have them installed, but again, depending on your linux distribution, you many need to install <strong>wxPython</strong> manually.  For many distributions, it may be as simple as:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -U wxPython
+</pre></div>
+</div>
+<p>Please see the wxPython website for more information if you have trouble getting wxPython installed.  <a class="reference external" href="https://www.wxpython.org/">https://www.wxpython.org/</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="basics.html" title="Basic Usage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="Intro"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+# theme_default.toml
+# default theme
+
+[image]
+bgcolor='#FFFFCE'
+streetcolor='#000000'
+bordercolor='#000000'
+timestampcolor='#000099'
+
+[axis]
+color = '#000000'
+grid = true
+gridcolor='#CCCCCC'
+
+[title]
+bgcolor='#DCFEDA'
+key_color = "#868686"
+value_color ="#000099"
+
+[legend]
+sort_bins_by_count=true
+fontcolor='#000000'
+overflow_textcolor='#00007F'
+
+

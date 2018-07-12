@@ -1,0 +1,44 @@
+# GOLD8BAR.toml
+# Sample part config file for lot2 and lot3 in the 
+# distribution stdf directory
+
+[image]
+bgcolor='#DAFEE7'
+#streetcolor='#DAFEE7'
+autosize_minpx=6
+basewidth=800
+baseheight=800
+
+[axis]
+color = '#366523'
+grid = true
+gridcolor='#999999'
+
+[title]
+bgcolor='#C7E6FF'
+key_color = "#8A0404"
+value_color ="#113AAD"
+
+[legend]
+sort_bins_by_count=true
+
+[flag]
+# size of flag as a ratio of diesize 
+# flagsize = diesize/size_factor.
+# i.e. smaller numbers = bigger flag
+# use a minimum of 1.0 
+size_factor = 1.4
+
+#Change Some Bin Labels
+[bin]
+0 = {color="#FFFFFF", label='-'}
+1 = {color="#00FF00", label="Good Die"}
+2 = {color="#FF0000", label="Bin 2"}
+3 = {color="#009999", label="Bin 3"}
+4 = {color="#FEF102", label="Bin 4"}
+5 = {color="#7120A8", label="Bin 5"}
+6 = {color="#880000", label="Bin 6"}
+7 = {color="#FFFFFF", label="Bin 7"}
+8 = {color="#FF9933", label="Bin 8"}
+9 = {color="#BF6E11", label="Bin 9"}
+10 = {color="#0000FF", label="Bin 10"}

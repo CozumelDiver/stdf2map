@@ -1,0 +1,4 @@
+include README.MD
+include conf/*
+include stdf/*.stdf
+recursive-include docs *

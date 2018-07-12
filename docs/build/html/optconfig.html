@@ -1,0 +1,349 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Optional Config Files &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multiple Test Flagging" href="flags.html" />
+    <link rel="prev" title="Built-in Viewer" href="mapviewer.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="flags.html" title="Multiple Test Flagging"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mapviewer.html" title="Built-in Viewer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Optional Config Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#user-config-files">USER Config Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-config-files">PART Config Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-config-files">THEME Config Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mapviewer.html"
+                        title="previous chapter">Built-in Viewer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="flags.html"
+                        title="next chapter">Multiple Test Flagging</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/optconfig.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="optional-config-files">
+<h1>Optional Config Files<a class="headerlink" href="#optional-config-files" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the main config file, <strong>stdf2map.config</strong>, There are three other types of config files, all optional.  These config files may contain any entries that are found in <strong>stdf2map.config</strong> (exclusive of the entries noted at the very top of <strong>stdf2map.config</strong>).  All config files should be created in your <strong>conf/</strong> directory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>When using config files, be aware that settings are applied in this order:</p>
+<ul class="last simple">
+<li><strong>stdf2map_config</strong></li>
+<li><strong>THEME config file</strong></li>
+<li><strong>PART config file</strong></li>
+<li><strong>USER config file specified with -c option</strong></li>
+<li><strong>other command line arguments (-b, -x, -w, -t, etc..)</strong></li>
+</ul>
+</div>
+<p>Any options applied later in the chain will supersede previous values, thus you should put the <strong>bare minimum</strong> in any config file that will get the desired results.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Keep backups of your config files! It's <strong>*very easy*</strong> to crash the program with an obscure <strong>typo</strong> in a config file. You <strong>WILL</strong> run into this!  It is highly recommended you <strong>keep backups</strong> until you've tested them!</p>
+</div>
+<div class="section" id="user-config-files">
+<span id="userconf-label"></span><h2>USER Config Files<a class="headerlink" href="#user-config-files" title="Permalink to this headline">¶</a></h2>
+<p>User config files are specified on the command line with the <strong>-c</strong> option and can be very useful for temporarily changing various options without having to edit <strong>stdf2map.config</strong>.  You can give user config files any legal name, but it must have a <strong>.toml</strong> extension.  There are a few sample user config files supplied in the distribution <strong>conf/</strong> directory.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -c thumb a595 -v
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The file extension <strong>&quot;.toml&quot;</strong> is optional when using the <strong>-c</strong> option</p>
+</div>
+<img alt="_images/a595-thumb.png" src="_images/a595-thumb.png" />
+<p><em>thumb.toml</em> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># thumb.toml</span>
+<span class="c1"># Generate a small thumbnail, set image to a small size with</span>
+<span class="c1"># minimal padding and disable symbols, title, legend, axes,</span>
+<span class="c1"># flagging, grid, timestamp, flat</span>
+
+<span class="c1"># NOTE: Autosizing will still be enabled by default.</span>
+<span class="c1"># If you &quot;really want&quot; the image to be &quot;basewidth x baseheight&quot;</span>
+<span class="c1"># in size, uncomment the autosize entry</span>
+
+<span class="n">enable_symbols</span><span class="o">=</span><span class="n">false</span>
+
+<span class="p">[</span><span class="n">image</span><span class="p">]</span>
+<span class="n">padding</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">basewidth</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">baseheight</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">border</span><span class="o">=</span><span class="n">true</span>
+<span class="n">flatline</span><span class="o">=</span><span class="n">false</span>
+<span class="n">timestamp</span><span class="o">=</span><span class="n">false</span>
+
+<span class="c1">#autosize=false</span>
+
+<span class="p">[</span><span class="n">flag</span><span class="p">]</span>
+<span class="n">show</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="n">show</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="n">show</span><span class="o">=</span><span class="n">false</span>
+
+<span class="p">[</span><span class="n">legend</span><span class="p">]</span>
+<span class="n">show</span><span class="o">=</span><span class="n">false</span>
+
+<span class="p">[</span><span class="n">file</span><span class="p">]</span>
+<span class="n">thumb_mode</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Or a slightly different version that makes the thumbnail a little bigger, removes the border, includes the flat and sets the background to white:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -c thumb1 a595 -v
+</pre></div>
+</div>
+<img alt="_images/a595-thumb1.png" src="_images/a595-thumb1.png" />
+<p>We will see the user config file in action again when we discuss <a class="reference internal" href="symbols.html#symbol-label"><span class="std std-ref">Symbols</span></a></p>
+</div>
+<div class="section" id="part-config-files">
+<h2>PART Config Files<a class="headerlink" href="#part-config-files" title="Permalink to this headline">¶</a></h2>
+<p>Unlike user config files, part config files are <strong>automatically</strong> applied when a file with a matching <strong>MIR</strong> field <strong>PART_TYP</strong> is processed.  These can be used to control options that will be applied to specific groups of maps based on the part type.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>Linux Note:</strong> - Part config file naming must have the <strong>same casing</strong> as your actual part name.</p>
+</div>
+<p>Some typical uses might be:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set different Bin labels for different parts</li>
+<li>Use the <strong>map_path</strong> and <strong>auto_filename</strong> options to group maps into specific directories by part</li>
+<li>Alter Bin Colors or set Symbols on specific parts so critical bins are more visible</li>
+<li>Alter the base map size to make parts with <strong>many</strong> die bigger and easier to see</li>
+</ul>
+</div></blockquote>
+<p>As an example, <strong>lot2</strong> and <strong>lot3</strong> in the distribution <strong>stdf</strong> directories both have and MIR <strong>PART_TYP</strong> of GOLD8BAR,  Since a GOLD8BAR.toml file exists, the settings in there will be automatically applied, and we've used them to change the map base size, several of the maps colors, and to give the Bin labels generic values:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map lot2 -vf
+</pre></div>
+</div>
+<img alt="_images/lot2.png" src="_images/lot2.png" />
+<p><em>GOLD8BAR.toml</em> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># GOLD8BAR.toml</span>
+<span class="c1"># Sample part config file for lot2 and lot3 in the</span>
+<span class="c1"># distribution stdf directory</span>
+
+<span class="p">[</span><span class="n">image</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#DAFEE7&#39;</span>
+<span class="n">autosize_minpx</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">basewidth</span><span class="o">=</span><span class="mi">800</span>
+<span class="n">baseheight</span><span class="o">=</span><span class="mi">800</span>
+
+<span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#366523&#39;</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;#999999&#39;</span>
+
+<span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#C7E6FF&#39;</span>
+<span class="n">key_color</span> <span class="o">=</span> <span class="s2">&quot;#8A0404&quot;</span>
+<span class="n">value_color</span> <span class="o">=</span><span class="s2">&quot;#113AAD&quot;</span>
+
+<span class="p">[</span><span class="n">legend</span><span class="p">]</span>
+<span class="n">sort_bins_by_count</span><span class="o">=</span><span class="n">true</span>
+
+<span class="p">[</span><span class="n">flag</span><span class="p">]</span>
+<span class="c1"># size of flag as a ratio of diesize</span>
+<span class="c1"># flagsize = diesize/size_factor.</span>
+<span class="c1"># i.e. smaller numbers = bigger flag</span>
+<span class="c1"># use a minimum of 1.0</span>
+<span class="n">size_factor</span> <span class="o">=</span> <span class="mf">1.4</span>
+
+<span class="c1">#Change Some Bin Labels</span>
+<span class="p">[</span><span class="nb">bin</span><span class="p">]</span>
+<span class="mi">0</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">}</span>
+<span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00FF00&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Good Die&quot;</span><span class="p">}</span>
+<span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 2&quot;</span><span class="p">}</span>
+<span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#009999&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 3&quot;</span><span class="p">}</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FEF102&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 4&quot;</span><span class="p">}</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#7120A8&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 5&quot;</span><span class="p">}</span>
+<span class="mi">6</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#880000&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 6&quot;</span><span class="p">}</span>
+<span class="mi">7</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 7&quot;</span><span class="p">}</span>
+<span class="mi">8</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF9933&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 8&quot;</span><span class="p">}</span>
+<span class="mi">9</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#BF6E11&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 9&quot;</span><span class="p">}</span>
+<span class="mi">10</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bin 10&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="theme-config-files">
+<span id="themeconf-label"></span><h2>THEME Config Files<a class="headerlink" href="#theme-config-files" title="Permalink to this headline">¶</a></h2>
+<p>Theme config files can be used for any purpose but would typically be used to change the visual appearance of the maps <em>(background color, font colors, borders, etc.)</em>.  A desired default theme can be specified in the <strong>_theme=</strong> variable near the top of <strong>stdf2map.config</strong> or you can supply a theme file using the command-line <strong>-e</strong> option</p>
+<p>Two examples are provided in <strong>conf/</strong> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -etheme_light a595 -v
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The file extension <strong>&quot;.toml&quot;</strong> is optional when using the <strong>-e</strong> option</p>
+</div>
+<img alt="_images/a595-theme_light.png" src="_images/a595-theme_light.png" />
+<p><em>theme_light.toml</em> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># theme_light.toml</span>
+<span class="c1"># A light wafermap theme</span>
+
+<span class="p">[</span><span class="n">image</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span>
+<span class="n">streetcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>
+<span class="n">border</span><span class="o">=</span><span class="n">false</span>
+<span class="n">bordercolor</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span>
+<span class="n">timestampcolor</span><span class="o">=</span><span class="s1">&#39;#999999&#39;</span>
+
+<span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#7F7F7F&#39;</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span>
+
+<span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span>
+<span class="n">key_color</span> <span class="o">=</span> <span class="s2">&quot;#007F00&quot;</span>
+<span class="n">value_color</span> <span class="o">=</span><span class="s2">&quot;#00007F&quot;</span>
+
+<span class="p">[</span><span class="n">legend</span><span class="p">]</span>
+<span class="n">sort_bins_by_count</span><span class="o">=</span><span class="n">true</span>
+<span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>
+</pre></div>
+</div>
+<p>...and another example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -etheme_dark a595 -v
+</pre></div>
+</div>
+<img alt="_images/a595-theme_dark.png" src="_images/a595-theme_dark.png" />
+<p><em>theme_dark.toml</em> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># theme_dark.toml</span>
+<span class="c1"># A dark wafermap theme</span>
+
+<span class="p">[</span><span class="n">image</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>
+<span class="n">streetcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>
+<span class="n">bordercolor</span><span class="o">=</span><span class="s1">&#39;#666666&#39;</span>
+<span class="n">timestampcolor</span><span class="o">=</span><span class="s1">&#39;#D2D2D2&#39;</span>
+
+<span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#999999&#39;</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;#333333&#39;</span>
+
+<span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>
+<span class="n">key_color</span> <span class="o">=</span> <span class="s2">&quot;#FFFFAA&quot;</span>
+<span class="n">value_color</span> <span class="o">=</span><span class="s2">&quot;#D4FFFF&quot;</span>
+
+<span class="p">[</span><span class="n">legend</span><span class="p">]</span>
+<span class="n">sort_bins_by_count</span><span class="o">=</span><span class="n">true</span>
+<span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span>
+<span class="n">overflow_textcolor</span><span class="o">=</span><span class="s1">&#39;#FC9090&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="flags.html" title="Multiple Test Flagging"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mapviewer.html" title="Built-in Viewer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

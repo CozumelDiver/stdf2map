@@ -1,0 +1,25 @@
+# theme_dark.toml
+# A dark wafermap theme
+
+[image]
+bgcolor='#000000'
+streetcolor='#000000'
+bordercolor='#666666'
+timestampcolor='#D2D2D2'
+
+[axis]
+color = '#999999'
+grid = true
+gridcolor='#333333'
+
+[title]
+bgcolor='#000000'
+key_color = "#FFFFAA"
+value_color ="#D4FFFF"
+
+[legend]
+sort_bins_by_count=true
+fontcolor='#FFFFFF'
+overflow_textcolor='#FC9090'
+
+

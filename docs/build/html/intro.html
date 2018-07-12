@@ -1,0 +1,237 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Intro &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="stdf2map documentation" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="stdf2map documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Intro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potential-drawbacks">Potential Drawbacks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspiration">Inspiration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementation">Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-maps">Sample Maps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">stdf2map documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/intro.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
+<p><strong>stdf2map</strong> is a lightweight python-based command line application for generating
+reasonably good looking Bin wafermaps from industry standard STDF data files
+created by Automated Test Equipment (ATE) used in the semiconductor industry.</p>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Supports multiple wafers within an STDF file</li>
+<li>Handles multiple testing <em>(retesting)</em> of die on the same wafer</li>
+<li>Supports mapping either software or hardware BIN (<em>sbin</em> or <em>hbin</em>)</li>
+<li>Flagging of die that did not <strong>result in the same bin number</strong> when multiply tested</li>
+<li>Bin assignable symbols improves visual feedback for critical bins.</li>
+<li>Part-based configuration files allow assignment of bin labels, colors, options, etc on a part-by-part basis</li>
+<li>Highly configurable, nearly every aspect can be changed via configuration file</li>
+<li>Create tiny thumbnails or huge images that can be made into posters</li>
+<li>Auto-sizing feature allows wafers with thousands of die to have legible maps automatically created.</li>
+<li>Command-line based, should be easy to integrate into user-written scripts for automatic/batch wafermap creation.</li>
+<li>File globbing supported, Create entire directories of maps with a single command.</li>
+<li>Demo mode creates realistic wafermaps and provides a path for testing modifications / enhancements that may fall outside the realm of available STDF files</li>
+<li>STDF v4 Compatible <em>(possibly v3 - untested)</em></li>
+<li>Supported Output Formats: BMP, EPS, GIF, JPG, PCX, PNG, PPM, TIFF, WEBP</li>
+<li>Built-in map viewer (BMP, GIF, JPG, PNG, PPM, TIFF Only)</li>
+<li><strong>Free!!</strong> - Peek under the hood, modify it, make it better, share it!</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="potential-drawbacks">
+<h2>Potential Drawbacks<a class="headerlink" href="#potential-drawbacks" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Still young in the development cycle, may contain bugs!</p>
+</li>
+<li><p class="first">Has not been rigorously tested with a wide variety of STDF files from different fabs/testers.  (I have a very limited supply and they are -<em>understandably-</em> quite rare on the web).  I'm retired now... testing is your job!</p>
+</li>
+<li><p class="first">Has only been tested on Windows 7 x64 and Linux Ubuntu v16.04 (x64, VM-based)</p>
+</li>
+<li><p class="first">Not a lot of config file error/syntax checking.  Very easy to crash the program via typo's in config files (although the error typically provides a pretty good clue to the nature of the issue)</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p><strong>Disclaimer</strong></p>
+<p class="last">This software is provided <strong>AS-IS</strong> without any expressed or implied warranty for fitness or usage.  The end user is responsible for any and all liability that may arise from usage of this software.  <em>(In other words, if you make process decisions based on this software that end up costing millions of dollars in lost product, don't blame me!)</em></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="inspiration">
+<h2>Inspiration<a class="headerlink" href="#inspiration" title="Permalink to this headline">¶</a></h2>
+<p>I wrote this because I had done something similar many years ago in perl &amp; libgd while working in the semiconductor industry.  Although I have a fairly long programming history (Fortran, C, C++, Perl, PHP, some Java, Javascript and C#, I was interested in learning Python, so it started as a teaching aid...  This is my second python program (<em>HelloWorld</em> was the first).</p>
+<p>It's very easy to carry programming habits from an older language to a newer one, and the results may be less than optimal for efficiency or style in the new language. If you wonder why I did something the way I did, or if it's not very <em>pythonic</em>, it's out of ignorance and inexperience to the language...  educate me by providing feedback or suggestions, or better yet, fork and improve the application for others.</p>
+</div>
+<div class="section" id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
+<p>Built on an stdf parser subclassed from one written in python by Hua Yanghao (available on GitHub at <a class="reference external" href="https://github.com/yanghao">https://github.com/yanghao</a> ) The application uses <strong>PIL</strong> <em>(pillow)</em> to generate the wafermap, and <strong>toml</strong> to read configuration files.  The stdf parser appears to be lightweight, yet quite solid, stable, complete and last, but certainly not least, easy for a <em>pythonic newbie</em> like myself to grok!</p>
+<p>Unlike some wafer mapping tools I've used in the past, <strong>stdf2map</strong> does not know or care about the actual wafer size, or even the die size.  It does not draw a circle with a flat and try to fit the data inside of it.  Instead, it lets the data define the shape, which to no surprise is <em>usually</em> circular... I say <em>usually</em> because in some situations, such as probing half a wafer, the resulting map will be &quot;cone-shaped&quot; instead of circular.  This was a deliberate design decision to add flexibility and simplicity.</p>
+</div>
+<div class="section" id="sample-maps">
+<h2>Sample Maps<a class="headerlink" href="#sample-maps" title="Permalink to this headline">¶</a></h2>
+<p>Since images are worth more than a few dozen words, below are some sample wafer maps created by this application.  If these look promising, feel free to explore the rest of the documentation and test out the application on your own data.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/a595-thumb.png" class="align-center" src="_images/a595-thumb.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/a595-thumb1.png" class="align-center" src="_images/a595-thumb1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/a595-09.png" class="align-center" src="_images/a595-09.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/demo2.png" class="align-center" src="_images/demo2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/demo3.png" class="align-center" src="_images/demo3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/a595-theme_light.png" class="align-center" src="_images/a595-theme_light.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/a595-theme_dark.png" class="align-center" src="_images/a595-theme_dark.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/lot2-t1_flags.png" class="align-center" src="_images/lot2-t1_flags.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/lot2-t2_noflags.png" class="align-center" src="_images/lot2-t2_noflags.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="_images/lot3-symbols.png" class="align-center" src="_images/lot3-symbols.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="stdf2map documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

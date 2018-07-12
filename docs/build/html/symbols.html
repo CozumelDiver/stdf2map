@@ -1,0 +1,187 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Symbols &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Demo Mode" href="demo.html" />
+    <link rel="prev" title="Multiple Test Flagging" href="flags.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Demo Mode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="flags.html" title="Multiple Test Flagging"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="flags.html"
+                        title="previous chapter">Multiple Test Flagging</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="demo.html"
+                        title="next chapter">Demo Mode</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/symbols.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="symbols">
+<span id="symbol-label"></span><h1>Symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h1>
+<p>Symbols are somewhat of an experimental option... I say <em>experimental</em> not so much because they make the program less stable, but rather to use them, you may need to do some <strong>experimenting</strong> to see how they work best for you.  It's probably easier to understand them through an example than to try and explain them first.  So go ahead and do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -c symbols -vf lot3
+</pre></div>
+</div>
+<p>And you should get:</p>
+<img alt="_images/lot3-symbols.png" src="_images/lot3-symbols.png" />
+<p>and then to understand where the symbols come from, have a look at the <strong>symbols.toml</strong> file in your <strong>conf/</strong> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">bin</span><span class="p">]</span>
+<span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Good Die&#39;</span><span class="p">}</span>
+<span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Setup/Continuity&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;cross&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">}</span>
+<span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#009999&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Leakage&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">}</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FEF102&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Threshhold&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;dot3&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.25</span><span class="p">}</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CC6699&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Resistance&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;plus&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#ffff00&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.6</span><span class="p">}</span>
+<span class="mi">7</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Breakdown&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;plus&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#FF0000&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span> <span class="p">}</span>
+<span class="mi">8</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#00FF00&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Statistical Failure&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;cross&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#ff0000&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">}</span>
+<span class="mi">10</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0000FF&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Capacitance&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.65</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">}</span>
+<span class="mi">16</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#BF6030&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;V/I Ramp Sense&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span> <span class="p">}</span>
+<span class="mi">17</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FF5500&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Strobe Failure&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#ffffff&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="p">}</span>
+<span class="mi">20</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#009999&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RAM CRC&#39;</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;diamond&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="s1">&#39;#ffff00&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Symbols can be used to very quickly <strong>grab your attention</strong> when you are scanning though a bunch of wafermaps.  Perhaps you have some <strong>critical bins</strong> that are easy to miss on a standard wafermap, or some that rarely fail but you <strong>really</strong> want to be alerted if they do... or maybe a recent process issue that you want to monitor more closely...  There are lots of good uses for them, but let me give you a real-life example of just how they came to be.</p>
+<p>When I worked in the industry, our wafers went through a <em>Statistical Software Test</em> after the functional hardware ATE test.  The statistical test would often mark additional die bad (ones that had passed functional hardware testing).  These were marked bad for a variety of reasons... statistical outlier, good die in bad neighborhood, drift analysis, or other factors that had proven to cause higher than usual burn-in or hybrid fallout. The statistically marked die were given special Bin numbers and the data was merged back with the original test data before dicing and picking.</p>
+<p>Test &amp; Device Engineers were constantly looking at wafermaps and other compiled data to monitor the effectiveness of both the Hardware and Statistical Software Testing, but visual recognition between hardware and software bin failures on a wafermap full of colored squares gave them headaches, so I came up with a solution they instantly liked.  <em>Set the background color of statistical bin failures to be that of &quot;good die&quot; and mark them with a special symbol.</em>  (After all, they <strong>were</strong> &quot;good die&quot; electrically, they were simply being rejected for statistical reasons.)</p>
+<p>Applying that principle here, assume all the dark brown bins on the below left map on are <em>Statistical Software Failures</em>.
+Using symbols on the below right, it instantly becomes <strong>visually apparent</strong> which die were statistical failures vs. those that failed electrical testing...  and this was just one statistical failure bin.  It becomes even more apparent when multiple bins and symbols are involved.</p>
+<img alt="_images/lot2-statsym1.png" src="_images/lot2-statsym1.png" />
+<p>For more info on how to use symbols, I'll just include an excerpt from the comments in the <strong>stdf2map.config</strong> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># For each bin listed, color and label MUST be specified</span>
+<span class="c1"># although label can be blank (as in label=&#39;&#39;).</span>
+<span class="c1"># Symbol is optional and valid symbols are:</span>
+<span class="c1">#   dot</span>
+<span class="c1">#   dot3</span>
+<span class="c1">#   dash</span>
+<span class="c1">#   plus</span>
+<span class="c1">#   square</span>
+<span class="c1">#   diamond</span>
+<span class="c1">#   triangle</span>
+<span class="c1">#   cross</span>
+<span class="c1">#</span>
+<span class="c1"># Symbol modifiers are also optional as defaults are used, but</span>
+<span class="c1"># in most cases the defaults won&#39;t look very well as it&#39;s impossible</span>
+<span class="c1"># to have a &quot;one-size fits all&quot; default that works for all calculated</span>
+<span class="c1"># die sizes.  Valid modifiers are:</span>
+<span class="c1">#   shade - synonymous with &quot;color&quot;, but applies to the symbol</span>
+<span class="c1">#   scale - the size of the symbol, in general, you can think of this as:</span>
+<span class="c1">#         &quot;if you draw a square around the symbol, it&#39;s the percentage of</span>
+<span class="c1">#         die space it will take up&quot;</span>
+<span class="c1">#   width - line width in pixels - applies only to symbols drawn with lines</span>
+<span class="c1">#         (cross, dash, plus). Because the image routines do not support</span>
+<span class="c1">#         anti-aliasing, &quot;width&quot; often looks best with odd numbers (1, 3, 5, etc.)</span>
+<span class="c1">#   outline - 1-pixel outline color, applies only to symbols that get a</span>
+<span class="c1">#         color fill (dot, dot3, square, diamond, triangle).  Not for small die...</span>
+<span class="c1">#</span>
+<span class="c1"># Symbols in general will not work very with small die, experimentation is the</span>
+<span class="c1"># best way to get a look you are after for any specific die size. (However, you</span>
+<span class="c1"># can always increase the apparent die size by making the image bigger :-)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Demo Mode"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="flags.html" title="Multiple Test Flagging"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

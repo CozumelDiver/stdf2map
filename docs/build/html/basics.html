@@ -1,0 +1,256 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Basic Usage &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command Line Options" href="commandline.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="commandline.html" title="Command Line Options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-globbing">File Globbing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#automatic-file-naming">Automatic File Naming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="commandline.html"
+                        title="next chapter">Command Line Options</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/basics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<style> .redbold {color:#990000; font-weight:bold;} </style><div class="section" id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<p>After installation, have a look in the distribution <strong>stdf</strong> directory.  There are three sample files in there... I believe <strong>lot2.stdf</strong> and <strong>lot3.stdf</strong> originated from the Galaxy web site and <strong>a595.stdf</strong> came from a package called [RADAR] (<a class="reference external" href="https://sites.google.com/site/stdfradar/">https://sites.google.com/site/stdfradar/</a>)   (I have other stdf files I've tested the app with, but they are proprietary and I can't distribute them)</p>
+<p>Run the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -o test a595
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you didn't copy the sample stdf files to your <strong>stdf_path</strong> directory during installation, you will need to <strong>cd</strong> into the distribution stdf directory for the above command to work.</p>
+</div>
+<p>The command above should provide three output files <em>test.png</em>, <em>test-1.png</em>, and <em>test-2.png</em> for wafers <strong>02</strong>, <strong>03</strong> and <strong>09</strong> respectively.  The images should be similar (but larger) than the following:</p>
+<img alt="_images/test.png" src="_images/test.png" />
+<p>Several things to note:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <strong>.stdf</strong> extension on input files is optional</li>
+<li>The <strong>-o</strong> option specifies a <em>base</em> output file name.  Because <em>clobbermode</em> is set to false by default in <strong>stdf2map.config</strong>, names for additional maps were created automatically by appending integers to the base output name.  If you run the exact same command again, in the same directory, you will get output files <em>test-3.png</em>, <em>test-4.png</em> and <em>test-5.png</em></li>
+<li>Since the image type was not specified, <strong>.png</strong> was used as the default (default format is set in the <strong>map_format</strong> variable in the config file).  The default format can be overriden by explicitly stating the output format (i.e <strong>stdf2map -o test.jpg a595</strong>)</li>
+</ul>
+</div></blockquote>
+<p>The title line in the wafermap is fairly self-explanatory, however the <strong>T:H1</strong> warrants an explanation.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>T</strong> - stands for <em>Test</em></li>
+<li><strong>H</strong> - means the hardware bin (hbin) is being mapped  This would be <strong>S</strong> if the software bin (sbin) were being mapped.</li>
+<li><strong>1</strong> - indicates the First testset for this wafer (covered in more detail in <a class="reference internal" href="flags.html#flags-label"><span class="std std-ref">Multiple Test Flagging</span></a></li>
+</ul>
+</div></blockquote>
+<p>Now try the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$stdf2map a595
+</pre></div>
+</div>
+<p>You will get the same three maps, but this time, they will be placed in your config file <strong>map_path</strong> directory, and they will have very different filenames:</p>
+<blockquote>
+<div><ul class="simple">
+<li>mcc_02_20021202-091854-h1.png</li>
+<li>mcc_03_20021202-092610-h1.png</li>
+<li>mcc_09_20021202-093226-h1.png</li>
+</ul>
+</div></blockquote>
+<div class="section" id="file-globbing">
+<h2>File Globbing<a class="headerlink" href="#file-globbing" title="Permalink to this headline">¶</a></h2>
+<p>You can create multiple maps at once using file globbing. In the distribution <strong>stdf</strong> directory, try the command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$stdf2map *.stdf
+</pre></div>
+</div>
+<p>and you should get several maps in your <strong>map_path</strong> directory.  Some will be duplicates of the ones you just created above and some will have different colors.  (We will get to the reason why the colors are different when we cover optional config files.)</p>
+<p>Some linux distributions support the <strong>globstar</strong> feature ( enabled with <strong>'shopt -s globstar'</strong> ) which can be very useful for recursively generating maps from stdf files in multiple subdirectory levels.
+For example, assume your stdf directory is <strong>/home/user/stdf/</strong> and you have stdf files in multiple subdirectories by <em>part/tester/lot</em>.  You can create maps for all of the stdf files with the simple command <strong>stdf2map /home/user/stdf/**/*.stdf</strong></p>
+</div>
+<div class="section" id="automatic-file-naming">
+<h2>Automatic File Naming<a class="headerlink" href="#automatic-file-naming" title="Permalink to this headline">¶</a></h2>
+<p>Since you <em>can</em> create gobs of maps using file globbing, output file names need to be unique and that is controlled by the <strong>auto_filename</strong> format string in the config file.  The default is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">auto_filename</span> <span class="o">=</span> <span class="s2">&quot;%prefix%part_%waferid_%tshum-%binmap%testset</span><span class="si">%s</span><span class="s2">uffix%thumbstr&quot;</span>
+</pre></div>
+</div>
+<p>but you have <strong>lots</strong> of different options when it comes to constructing the auto-generated naming method.  Here's a excerpt of comments from the <strong>stdf2map.config</strong> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Auto-generated filename format (i.e no -o option on command line)</span>
+<span class="c1">#---------------------</span>
+<span class="c1"># Valid Keywords are:</span>
+<span class="c1">#---------------------</span>
+<span class="c1"># %part - Part ID</span>
+<span class="c1"># %lotid - Wafer lotid</span>
+<span class="c1"># %waferid - Wafer ID</span>
+<span class="c1"># %nowhex - Current unix time in hex</span>
+<span class="c1"># %nowdec - Current unix time in decimal</span>
+<span class="c1"># %nowhum - Current human readable gmtime (Ymd-HMS)</span>
+<span class="c1"># %tshex - Test datetime unix time in hex</span>
+<span class="c1"># %tsdec - Test datetime unix time in decimal</span>
+<span class="c1"># %tshum - Test datetime - Human readable gmtime (Ymd-HMS)</span>
+<span class="c1"># %testset - Test number as specified with -t command line option</span>
+<span class="c1"># %binmap - &quot;Will be either H for HBIN or S for SBIN&quot;</span>
+<span class="c1"># %prefix - User specified string (see below)</span>
+<span class="c1"># %suffix - User specified string (see below)</span>
+<span class="c1"># %thumbstr - ONLY inserted if thumb_mode = True (see below)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The default <strong>auto_filename</strong> format string will put <strong>ALL</strong> maps in the same output directory.  Probably not an ideal situation for thousands of maps... it may be preferable to have output maps in subdirectories by part and lotid, thus give some attention to the following comments and experiment with what works best for you.</p>
+</div>
+<p>more <strong>auto_filename</strong> comments:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#---------------------</span>
+<span class="c1"># Note that string literals remain unchanged, thus if you wanted</span>
+<span class="c1"># a fab number for example, at the beginning of all your files you could use</span>
+<span class="c1"># something like: &quot;FAB1_%part_waferid_...etc&quot;</span>
+<span class="c1"># You can also use path separators appropriate to your system</span>
+<span class="c1"># (use \ on Windows) to create a directory structure.</span>
+<span class="c1"># For example, the following would put maps in sub-directories by part and lotid</span>
+<span class="c1"># ( sub-directories are automatically created if they don&#39;t exist )</span>
+<span class="c1"># auto_filename = &#39;%prefix%part\%lotid\%waferid_%binmap%testset%suffix%thumbstr&#39;</span>
+
+<span class="n">auto_filename</span> <span class="o">=</span> <span class="s2">&quot;%prefix%part_%waferid_%tshum-%binmap%testset</span><span class="si">%s</span><span class="s2">uffix%thumbstr&quot;</span>
+
+<span class="c1"># If &quot;clobbermode&quot; = True, output files of the same name will be overwritten,</span>
+<span class="c1"># if False, a &quot;dash-number&quot; will be appended just preceding the file type until</span>
+<span class="c1"># a unique file name is obtained (i.e file-1, file-2, file-3 .... file-n)</span>
+
+<span class="n">clobbermode</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="c1"># Prefix and suffix are arbitrary user-defined strings that are provided</span>
+<span class="c1"># primarily as a means of customizing the filename from within config files</span>
+<span class="c1"># They can be placed anywhere in the format string, they don&#39;t necessarily</span>
+<span class="c1"># need to go at the beginning or end.</span>
+
+<span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Thumb_mode should ALWAYS be false in the main configuration file.</span>
+<span class="c1"># It is provided as a means of enabling thumbnail mode from a user</span>
+<span class="c1"># configuration file.  The ONLY effect thumb_mode has is the automatic</span>
+<span class="c1"># insertion of &quot;thumbstr&quot; in the output filename (assuming &#39;auto_filename&#39;</span>
+<span class="c1"># contains the %thumbstr keyword)</span>
+
+<span class="n">thumb_mode</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">thumbstr</span> <span class="o">=</span> <span class="s2">&quot;_thumb&quot;</span>
+
+<span class="c1"># Automatically translate case in the output filename. Valid values are:</span>
+<span class="c1"># &#39;upper&#39;,&#39;lower&#39;,&#39;capitalize&#39; (Only capitalizes the first letter)</span>
+<span class="c1"># If it is commented out, no case changing will be performed</span>
+<span class="n">auto_translate</span> <span class="o">=</span> <span class="s1">&#39;lower&#39;</span>
+</pre></div>
+</div>
+<p>There are a number of options you can tweak in the config file.  Most of them should be fairly intuitive, the ones that aren't I've tried to clarify with comments.  Some of them can be superseded via command line options, discussed in the next section.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="commandline.html" title="Command Line Options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

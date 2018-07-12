@@ -1,0 +1,299 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Command Line Options &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Built-in Viewer" href="mapviewer.html" />
+    <link rel="prev" title="Basic Usage" href="basics.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mapviewer.html" title="Built-in Viewer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="basics.html" title="Basic Usage"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="basics.html"
+                        title="previous chapter">Basic Usage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mapviewer.html"
+                        title="next chapter">Built-in Viewer</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/commandline.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="command-line-options">
+<h1>Command Line Options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h1>
+<p>The following command line options are available:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><strong>--version</strong> ⇛ <em>self explanatory</em></p>
+</li>
+<li><p class="first"><strong>-h, --help</strong> ⇛ <em>self explanatory</em></p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-a, --autosize</strong> ⇛ <em>Disable autosize mode</em></dt>
+<dd><p class="first">Autosize is enabled by default, and forces each die to have a minimum pixel size so that all die are visible.  You normally won't notice any effect from autosize unless you are making a small map with a large number of die.  There are two entries in <strong>stdf2map.config</strong> that control autosizing:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Autosize and Autosize_minpx work together</span>
+<span class="c1"># if autosize is enabled, the map basesize</span>
+<span class="c1"># will be increased so that each die has a</span>
+<span class="c1"># minimum shorter side of &quot;minpx&quot; Pixels</span>
+<span class="c1"># This can be useful for autosizing wafers with</span>
+<span class="c1"># thousands of die, like discrete devices.</span>
+<span class="n">autosize</span><span class="o">=</span><span class="n">true</span>
+<span class="n">autosize_minpx</span><span class="o">=</span><span class="mi">6</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-b BINMAP, --binmap=BINMAP</strong></dt>
+<dd><p class="first last">An STDF Part Result Record (PRR) has two different variables to record Die Binning information: <em>HARD_BIN</em> and <em>SOFT_BIN</em>, (or sometimes referred to as <em>HBIN</em> and <em>SBIN</em>).  <em>HARD_BIN</em> is most commonly used, but some implementations will use <em>SOFT_BIN</em> as well, or they may both be populated with the same number.  <strong>stdf2map</strong> can map either variable and the default is set in <strong>stdf2map.config</strong>  To map the non-default variable use <strong>-bsbin</strong> (or <strong>--binmap=sbin</strong>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-c USER_CONF, --conf=USER_CONF</strong></dt>
+<dd><p class="first last">Load a user configuration file, see <a class="reference internal" href="optconfig.html#userconf-label"><span class="std std-ref">USER Config Files</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-d DEMO, --demo=DEMO</strong></dt>
+<dd><p class="first last">Generate a Demo WaferMap, integer argument is number of wafers (1-99), see <a class="reference internal" href="demo.html#demo-label"><span class="std std-ref">Demo Mode</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-e THEME, --theme=THEME</strong></dt>
+<dd><p class="first last">Load a theme configuration file, see <a class="reference internal" href="optconfig.html#themeconf-label"><span class="std std-ref">THEME Config Files</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-f,--flag</strong> ⇛ <em>Disable flagging multiple die results</em></dt>
+<dd><p class="first last">Flagging of multiply tested die is enabled by default in <strong>stdf2map.config</strong>, use this flag to temporarily disable it, see <a class="reference internal" href="flags.html#flags-label"><span class="std std-ref">Multiple Test Flagging</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-g GOOD_DIE, --good=GOOD_DIE</strong></dt>
+<dd><p class="first last">Specify Good Die Percentage - Applies to Demo ONLY, see <a class="reference internal" href="demo.html#demo-label"><span class="std std-ref">Demo Mode</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-i, --info</strong>  ⇛ <em>Print Data Summary Info - Does not create map</em></dt>
+<dd><p class="first last">This command is useful if you want to determine the wafer id's, number of wafers, or number of test sets in an STDF file</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-l LOGLEVEL, --loglevel=LOGLEVEL</strong>  ⇛ <em>Override default Log Level</em></dt>
+<dd><p class="first">The default loglevel is set in <strong>stdf2map.config</strong> and is typically INFO.  This command allows you to temporarily override the default, i.e.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">loglevel</span><span class="o">=</span><span class="n">DEBUG</span>
+</pre></div>
+</div>
+<p class="last">Valid values in order of increasing severity are NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-o OUTFILE, --output=OUTFILE</strong> ⇛ <em>Specify output image file</em></dt>
+<dd><p class="first last">Use this option to override the default file naming routine to give your map a specific filename.  File will be saved in the format given by the file extension (.bmp, .jpg, .png, etc...).  If you do not supply a file extension the default is <strong>.png</strong> (or that specified by the <strong>map_format</strong> option in <strong>stdf2map.config</strong>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-q, --quiet</strong>  ⇛  <em>Suppress messages</em></dt>
+<dd><p class="first">By default, <strong>stdf2map</strong> will output messages to the screen at the currently active loglevel.  Use this mode to suppress these messages</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>--quiet</strong> only suppresses messages to the screen.  Messages are still sent to the logfile.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-s, --symbols</strong> ⇛  <em>Disable Symbols</em></dt>
+<dd><p class="first last">Use this option to temporarily disable symbols on an output map.  It only has an effect if symbols have actually been assigned to specific Bins, see <a class="reference internal" href="symbols.html#symbol-label"><span class="std std-ref">Symbols</span></a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-t TESTSET, --testset=TESTSET</strong></dt>
+<dd><p class="first last">Select a specific testset to be mapped, requires integer argument &gt; 0.  If the requested testset does not exist in the data, an error will be logged. See also: <a class="reference internal" href="flags.html#flags-label"><span class="std std-ref">Multiple Test Flagging</span></a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>-v, --viewer</strong> ⇛ <em>Launch MapViewer</em>, See <a class="reference internal" href="mapviewer.html#viewer-label"><span class="std std-ref">Built-in Viewer</span></a></p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-w WAFERID, --wafer=WAFERID</strong></dt>
+<dd><p class="first">Select a specific wafer to be mapped.  Argument is the string waferid as stored in the STDF <strong>WIR</strong> <em>WAFER_ID</em> field.  For the purposes of extraction, the string is NOT case sensitive.  If you are not sure what WAFER_ID's a lot contains, you can use the <strong>-i</strong> command.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>If</strong> the internal WAFER_ID is stored as a string that can be converted to an integer (i.e. &quot;01&quot;, &quot;10&quot;, &quot;24&quot;, etc), you can specify a integer value as the argument.  For example if the internal WAFER_ID is &quot;03&quot;, then the following are all equivalent:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>stdf2map -w03  <em>-(or)-</em> stdf2map --wafer=03</li>
+<li>stdf2map -w3   <em>-(or)-</em> stdf2map --wafer=3</li>
+</ul>
+</div></blockquote>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>-x BASEWIDTH, --width=BASEWIDTH</strong>  ⇛  <em>Base Width of map</em></p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>-y BASEHEIGHT, --height=BASEHEIGHT</strong> ⇛ <em>Base Height of map</em></dt>
+<dd><p class="first last">The base width and height of an image are set by two options in <strong>stdf2map.config</strong> appropriately named <strong>basewidth</strong> and <strong>baseheight</strong>.  The <strong>-x</strong> and <strong>-y</strong> options allow you to temporarily override these defaults to create a different size image.  Please note that <strong>basewidth</strong> and <strong>baseheight</strong> do not define the <strong>actual</strong> size of the output image, but rather a starting point for the size of the actual diemap itself.  Adding a title, legend and axes will all increase the actual size of the rendered image.  In addition, the actual size of the output map may be increased by the autosizing methods.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>-z, --dump</strong>  ⇛  Dumps some internal data structures to the screen that may be useful for debugging.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>Output from stdf2map --help:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">stdf2map</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">filename</span>
+
+ <span class="n">Options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">version</span>             <span class="n">show</span> <span class="n">program</span><span class="s1">&#39;s version number and exit</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">--</span><span class="n">autosize</span>        <span class="n">Disable</span> <span class="n">autosize</span> <span class="n">mode</span>
+  <span class="o">-</span><span class="n">b</span> <span class="n">BINMAP</span><span class="p">,</span> <span class="o">--</span><span class="n">binmap</span><span class="o">=</span><span class="n">BINMAP</span>
+                        <span class="n">Binmap</span> <span class="n">should</span> <span class="n">be</span> <span class="n">either</span> <span class="s1">&#39;sbin&#39;</span> <span class="ow">or</span> <span class="s1">&#39;hbin&#39;</span>
+  <span class="o">-</span><span class="n">c</span> <span class="n">USER_CONF</span><span class="p">,</span> <span class="o">--</span><span class="n">conf</span><span class="o">=</span><span class="n">USER_CONF</span>
+                        <span class="n">Load</span> <span class="n">a</span> <span class="n">user</span> <span class="n">configuration</span> <span class="n">file</span>
+  <span class="o">-</span><span class="n">d</span> <span class="n">DEMO</span><span class="p">,</span> <span class="o">--</span><span class="n">demo</span><span class="o">=</span><span class="n">DEMO</span>  <span class="n">Generate</span> <span class="n">a</span> <span class="n">Demo</span> <span class="n">WaferMap</span><span class="p">,</span> <span class="n">integer</span> <span class="n">argument</span> <span class="ow">is</span> <span class="n">number</span>
+                        <span class="n">of</span> <span class="n">wafers</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">99</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">e</span> <span class="n">THEME</span><span class="p">,</span> <span class="o">--</span><span class="n">theme</span><span class="o">=</span><span class="n">THEME</span>
+                        <span class="n">Specify</span> <span class="n">a</span> <span class="n">theme</span> <span class="n">configuration</span> <span class="n">file</span>
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="n">flag</span>            <span class="n">Disable</span> <span class="n">flagging</span> <span class="n">multiple</span> <span class="n">die</span> <span class="n">results</span>
+  <span class="o">-</span><span class="n">g</span> <span class="n">GOOD_DIE</span><span class="p">,</span> <span class="o">--</span><span class="n">good</span><span class="o">=</span><span class="n">GOOD_DIE</span>
+                        <span class="n">Specify</span> <span class="n">Good</span> <span class="n">Die</span> <span class="n">Percentage</span> <span class="o">-</span> <span class="n">Applies</span> <span class="n">to</span> <span class="n">Demo</span> <span class="n">ONLY</span>
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">info</span>            <span class="n">Print</span> <span class="n">Data</span> <span class="n">Summary</span> <span class="n">Info</span> <span class="o">-</span> <span class="n">Does</span> <span class="ow">not</span> <span class="n">create</span> <span class="nb">map</span>
+  <span class="o">-</span><span class="n">l</span> <span class="n">LOGLEVEL</span><span class="p">,</span> <span class="o">--</span><span class="n">loglevel</span><span class="o">=</span><span class="n">LOGLEVEL</span>
+                        <span class="n">Override</span> <span class="n">default</span> <span class="n">Log</span> <span class="n">Level</span>
+  <span class="o">-</span><span class="n">o</span> <span class="n">OUTFILE</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span><span class="o">=</span><span class="n">OUTFILE</span>
+                        <span class="n">Specify</span> <span class="n">output</span> <span class="n">image</span> <span class="n">file</span>
+  <span class="o">-</span><span class="n">q</span><span class="p">,</span> <span class="o">--</span><span class="n">quiet</span>           <span class="n">Suppress</span> <span class="n">messages</span>
+  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">symbols</span>         <span class="n">Disable</span> <span class="n">Symbols</span>
+  <span class="o">-</span><span class="n">t</span> <span class="n">TESTSET</span><span class="p">,</span> <span class="o">--</span><span class="n">testset</span><span class="o">=</span><span class="n">TESTSET</span>
+                        <span class="n">Select</span> <span class="n">testset</span> <span class="n">number</span> <span class="o">-</span> <span class="n">First</span> <span class="n">test</span> <span class="ow">is</span> <span class="mi">1</span><span class="p">,</span> <span class="n">retests</span> <span class="n">are</span>
+                        <span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="o">...</span><span class="n">etc</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">viewer</span>          <span class="n">Launch</span> <span class="n">MapViewer</span>
+  <span class="o">-</span><span class="n">w</span> <span class="n">WAFERID</span><span class="p">,</span> <span class="o">--</span><span class="n">wafer</span><span class="o">=</span><span class="n">WAFERID</span>
+                        <span class="n">Specify</span> <span class="n">a</span> <span class="n">single</span> <span class="n">wafer</span> <span class="n">ID</span> <span class="n">within</span> <span class="n">file</span>
+  <span class="o">-</span><span class="n">x</span> <span class="n">BASEWIDTH</span><span class="p">,</span> <span class="o">--</span><span class="n">width</span><span class="o">=</span><span class="n">BASEWIDTH</span>
+                        <span class="n">Base</span> <span class="n">Width</span> <span class="n">of</span> <span class="nb">map</span> <span class="p">(</span><span class="n">overrides</span> <span class="n">default</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">y</span> <span class="n">BASEHEIGHT</span><span class="p">,</span> <span class="o">--</span><span class="n">height</span><span class="o">=</span><span class="n">BASEHEIGHT</span>
+                        <span class="n">Base</span> <span class="n">Height</span> <span class="n">of</span> <span class="nb">map</span> <span class="p">(</span><span class="n">overrides</span> <span class="n">default</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="o">--</span><span class="n">dump</span>            <span class="n">Dump</span> <span class="n">lot</span> <span class="n">data</span> <span class="n">to</span> <span class="n">screen</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mapviewer.html" title="Built-in Viewer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="basics.html" title="Basic Usage"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

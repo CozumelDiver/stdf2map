@@ -1,0 +1,27 @@
+# Sample demomap config file
+
+[image]
+bgcolor='#D8D8D8'
+basewidth=500
+baseheight=500
+
+[axis]
+color = '#75160F'
+grid = true
+gridcolor='#AAAAAA'
+
+[title]
+bgcolor='#FDD2CD'
+key_color = "#620E04"
+value_color ="#091D5D"
+
+[legend]
+sort_bins_by_count=true
+
+[file]
+# set map_path and auto_filename to redirect all demo maps to specific directory
+map_path = 'E:\WmapDemo\DemoMap'
+auto_filename = '%part_%lotid_%waferid_%binmap%testset%thumbstr'
+
+
+

@@ -1,0 +1,26 @@
+# theme_light.toml
+# A light wafermap theme
+
+[image]
+bgcolor='#FFFFFF'
+streetcolor='#000000'
+border=false
+bordercolor='#FFFFFF'
+timestampcolor='#999999'
+
+[axis]
+color = '#7F7F7F'
+grid = true
+gridcolor='#CCCCCC'
+
+[title]
+bgcolor='#FFFFFF'
+key_color = "#007F00"
+value_color ="#00007F"
+
+[legend]
+sort_bins_by_count=true
+fontcolor='#000000'
+
+
+

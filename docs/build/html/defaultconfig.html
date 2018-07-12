@@ -1,0 +1,463 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Default Config File &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Demo Mode" href="demo.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Demo Mode"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="demo.html"
+                        title="previous chapter">Demo Mode</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/defaultconfig.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<div class="section" id="default-config-file">
+<h1>Default Config File<a class="headerlink" href="#default-config-file" title="Permalink to this headline">¶</a></h1>
+<p>For reference, below is the full default <strong>stdf2map.config</strong> file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#====================================================</span>
+<span class="c1"># IMPORTANT - README!!!</span>
+<span class="c1">#  1. true/false values MUST be specified in ALL</span>
+<span class="c1">#     LOWER CASE (toml rule, not mine...)</span>
+<span class="c1">#  2. Floating point number values &lt; 1 MUST have a</span>
+<span class="c1">#     leading zero.  i.e. &quot;setting = 0.5&quot;</span>
+<span class="c1">#----------------------------------------------------</span>
+<span class="c1"># Caution -- Hazard Section!</span>
+<span class="c1">#----------------------------------------------------</span>
+<span class="c1"># NOT advisable to use anything in this section in</span>
+<span class="c1"># a user or part config file! (Either won&#39;t be applied</span>
+<span class="c1"># or may cause unpredictable results...)</span>
+<span class="c1">#----------------------------------------------------</span>
+
+<span class="n">_enable_user_config</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">_enable_part_config</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">_theme</span> <span class="o">=</span> <span class="s1">&#39;theme_default&#39;</span>
+
+<span class="c1">#----------- End of Hazard Section ------------------</span>
+
+
+<span class="c1"># Set to your &quot;Good Die&quot; Bin Number</span>
+<span class="n">good_die_bin</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># create map for either sbin or hbin</span>
+<span class="n">binmap</span> <span class="o">=</span> <span class="s1">&#39;hbin&#39;</span>
+
+<span class="c1"># If duplicate die warnings is true, entries</span>
+<span class="c1"># will be logged for retested die</span>
+<span class="c1"># indicating same or different bin failures</span>
+
+<span class="n">duplicate_die_warnings</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="c1"># Following output types are supported:</span>
+<span class="c1"># BMP, EPS, GIF, JPG, PCX, PNG, PPM, TIFF, WEBP</span>
+<span class="c1"># NOTE: Case is unimportant, but WILL be carried</span>
+<span class="c1"># through to automatically generated filenames!</span>
+<span class="c1"># which may be significant on Linux</span>
+<span class="n">map_format</span> <span class="o">=</span> <span class="s1">&#39;png&#39;</span>
+
+<span class="c1"># Default to symbols enabled, setting to false would</span>
+<span class="c1"># have the same effect as always using the -s option</span>
+<span class="c1"># (which may be useful in user config files)</span>
+<span class="n">enable_symbols</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># Default to map die that have not be retested</span>
+
+<span class="n">testset</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># --------------- File Section Group ---------------------</span>
+<span class="p">[</span><span class="n">file</span><span class="p">]</span>
+<span class="c1"># File Paths, enter in either normal Windows or Linux</span>
+<span class="c1"># format depending on your system.  You **DO NOT ** need</span>
+<span class="c1"># to escape backslashes on Windows</span>
+<span class="c1"># Examples:</span>
+<span class="c1"># map_path = &#39;C:\Mydata\Binmaps&quot;</span>
+<span class="c1"># map_path = &quot;/home/user/mydata/binmaps/&quot;</span>
+
+<span class="n">map_path</span> <span class="o">=</span> <span class="s1">&#39;E:\WMapDemo\Maps&#39;</span>
+<span class="n">stdf_path</span> <span class="o">=</span> <span class="s1">&#39;E:\WMapDemo\stdf&#39;</span>
+<span class="n">logfile</span> <span class="o">=</span> <span class="s1">&#39;E:\WMapDemo\Wmap.log&#39;</span>
+<span class="n">logfile_size</span> <span class="o">=</span> <span class="mi">2000000</span>
+<span class="n">logfile_rotates</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Auto-generated filename format (i.e no -o option on command line)</span>
+<span class="c1">#---------------------</span>
+<span class="c1"># Valid Keywords are:</span>
+<span class="c1">#---------------------</span>
+<span class="c1"># %part - Part ID</span>
+<span class="c1"># %lotid - Wafer lotid</span>
+<span class="c1"># %waferid - Wafer ID</span>
+<span class="c1"># %nowhex - Current unix time in hex</span>
+<span class="c1"># %nowdec - Current unix time in decimal</span>
+<span class="c1"># %nowhum - Current human readable gmtime (Ymd-HMS)</span>
+<span class="c1"># %tshex - Test datetime unix time in hex</span>
+<span class="c1"># %tsdec - Test datetime unix time in decimal</span>
+<span class="c1"># %tshum - Test datetime - Human readable gmtime (Ymd-HMS)</span>
+<span class="c1"># %testset - Test number as specified with -t command line option</span>
+<span class="c1"># %binmap - &quot;Will be either H for HBIN or S for SBIN&quot;</span>
+<span class="c1"># %prefix - User specified string (see below)</span>
+<span class="c1"># %suffix - User specified string (see below)</span>
+<span class="c1"># %thumbstr - ONLY inserted if thumb_mode = True (see below)</span>
+<span class="c1">#---------------------</span>
+<span class="c1"># Note that string literals remain unchanged, thus if you wanted</span>
+<span class="c1"># a fab number for example, at the beginning of all your files you could use</span>
+<span class="c1"># something like: &quot;FAB1_%part_waferid_...etc&quot;</span>
+<span class="c1"># You can also use path separators appropriate to your system</span>
+<span class="c1"># (use \ on Windows) to create a directory structure.</span>
+<span class="c1"># For example, the following would put maps in sub-directories by part and lotid</span>
+<span class="c1"># ( sub-directories are automatically created if they don&#39;t exist )</span>
+<span class="c1"># auto_filename = &#39;%prefix%part\%lotid\%waferid_%binmap%testset%suffix%thumbstr&#39;</span>
+
+<span class="n">auto_filename</span> <span class="o">=</span> <span class="s2">&quot;%prefix%part_%waferid_%tshum-%binmap%testset</span><span class="si">%s</span><span class="s2">uffix%thumbstr&quot;</span>
+
+<span class="c1"># If &quot;clobbermode&quot; = True, output files of the same name will be overwritten,</span>
+<span class="c1"># if False, a &quot;dash-number&quot; will be appended just preceding the file type until</span>
+<span class="c1"># a unique file name is obtained (i.e file-1, file-2, file-3 .... file-n)</span>
+
+<span class="n">clobbermode</span> <span class="o">=</span> <span class="n">false</span>
+
+<span class="c1"># Prefix and suffix are arbitrary user-defined strings that are provided</span>
+<span class="c1"># primarily as a means of customizing the filename from within config files</span>
+<span class="c1"># They can be placed anywhere in the format string, they don&#39;t necessarily</span>
+<span class="c1"># need to go at the beginning or end.</span>
+
+<span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">suffix</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Thumb_mode should ALWAYS be false in the main configuration file.</span>
+<span class="c1"># It is provided as a means of enabling thumbnail mode from a user</span>
+<span class="c1"># configuration file.  The ONLY effect thumb_mode has is the automatic</span>
+<span class="c1"># insertion of &quot;thumbstr&quot; in the output filename (assuming &#39;auto_filename&#39;</span>
+<span class="c1"># contains the %thumbstr keyword)</span>
+
+<span class="n">thumb_mode</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">thumbstr</span> <span class="o">=</span> <span class="s2">&quot;_thumb&quot;</span>
+
+<span class="c1"># Automatically translate case in the output filename. Valid values are:</span>
+<span class="c1"># &#39;upper&#39;,&#39;lower&#39;,&#39;capitalize&#39; (Only capitalizes the first letter)</span>
+<span class="c1"># If it is commented out, no case changing will be performed</span>
+<span class="n">auto_translate</span> <span class="o">=</span> <span class="s1">&#39;lower&#39;</span>
+
+<span class="c1"># --------------- Fiag Section Group ---------------------</span>
+<span class="p">[</span><span class="n">flag</span><span class="p">]</span>
+<span class="n">show</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="c1"># Flag color if Bin results the SAME for all test sets</span>
+<span class="n">duplicate_color</span> <span class="o">=</span> <span class="s1">&#39;#FFFFFF&#39;</span>
+
+<span class="c1"># Flag color if Bin results DIFFERENT across test sets</span>
+<span class="n">split_color</span> <span class="o">=</span> <span class="s1">&#39;#FF0000&#39;</span>
+
+<span class="c1"># size of flag as a ratio of diesize</span>
+<span class="c1"># flagsize = diesize/size_factor.</span>
+<span class="c1"># (i.e. smaller numbers = bigger flag)</span>
+<span class="c1"># Typically you would want a slightly smaller number</span>
+<span class="c1"># for smaller die to increase the apparent flag size.</span>
+<span class="c1"># A number of 1.0 would divide the die in half</span>
+<span class="c1"># corner to corner (Use a minimum of 1.0)</span>
+
+<span class="n">size_factor</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+<span class="c1"># --------------- Image Section Group ---------------------</span>
+
+<span class="p">[</span><span class="n">image</span><span class="p">]</span>
+<span class="n">padding</span><span class="o">=</span><span class="mi">15</span>  <span class="c1"># Spacer around map image</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#FFFFCE&#39;</span> <span class="c1"># Map background color</span>
+<span class="n">streetcolor</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span>     <span class="c1">#Border around die</span>
+
+<span class="c1"># Base Map size (not including legend)</span>
+<span class="c1"># If autosize is enabled, the base size</span>
+<span class="c1"># may be increased during rendering if</span>
+<span class="c1"># the calculated die size is too small</span>
+<span class="c1"># (See Autosize below)</span>
+<span class="n">basewidth</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">baseheight</span><span class="o">=</span><span class="mi">500</span>
+
+<span class="n">border</span><span class="o">=</span><span class="n">true</span>  <span class="c1"># Border around entire image</span>
+<span class="n">bordercolor</span> <span class="o">=</span> <span class="s1">&#39;#990000&#39;</span>
+<span class="n">flatline</span><span class="o">=</span><span class="n">true</span>  <span class="c1"># line indicating flat location</span>
+<span class="n">flatcolor</span><span class="o">=</span><span class="s1">&#39;#990000&#39;</span>
+<span class="n">timestamp</span><span class="o">=</span><span class="n">true</span> <span class="c1"># Map creation timestamp</span>
+<span class="n">timestampcolor</span> <span class="o">=</span> <span class="s1">&#39;#000099&#39;</span>
+
+<span class="c1"># Autosize and Autosize_minpx work together</span>
+<span class="c1"># if autosize is enabled, the map basesize</span>
+<span class="c1"># will be increased so that each die has a</span>
+<span class="c1"># minimum shorter side of &quot;minpx&quot; Pixels</span>
+<span class="c1"># This can be useful for autosizing wafers with</span>
+<span class="c1"># thousands of die, like discrete devices.</span>
+<span class="n">autosize</span><span class="o">=</span><span class="n">true</span>
+<span class="n">autosize_minpx</span><span class="o">=</span><span class="mi">6</span>
+
+<span class="c1"># ------------- Axis / Grid Section Group -----------------</span>
+<span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+<span class="n">show</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">font</span> <span class="o">=</span> <span class="s1">&#39;arialbd.ttf&#39;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#000000&#39;</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span>
+
+<span class="c1"># --------------- Title Section Group ---------------------</span>
+<span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="n">show</span><span class="o">=</span><span class="n">true</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">vpadding</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;#DCFEDA&#39;</span>
+<span class="n">keyname_part</span> <span class="o">=</span> <span class="s1">&#39;Part: &#39;</span>
+<span class="n">keyname_lotid</span> <span class="o">=</span> <span class="s1">&#39;Lot ID: &#39;</span>
+<span class="n">keyname_waferid</span> <span class="o">=</span> <span class="s1">&#39;Wafer ID: &#39;</span>
+<span class="n">keyname_date</span> <span class="o">=</span> <span class="s1">&#39;Date: &#39;</span>
+<span class="n">keyname_testset</span> <span class="o">=</span> <span class="s1">&#39;T:&#39;</span>
+<span class="n">keyname_yieldstr</span> <span class="o">=</span> <span class="s1">&#39;Y:&#39;</span>
+<span class="n">key_color</span> <span class="o">=</span> <span class="s2">&quot;#868686&quot;</span>
+<span class="n">value_color</span> <span class="o">=</span><span class="s2">&quot;#000099&quot;</span>
+<span class="n">font</span> <span class="o">=</span> <span class="s1">&#39;arialbd.ttf&#39;</span>
+
+<span class="c1"># --------------- Legend Section Group ---------------------</span>
+<span class="p">[</span><span class="n">legend</span><span class="p">]</span>
+<span class="n">show</span><span class="o">=</span><span class="n">true</span>           <span class="c1">#Legend drawn</span>
+<span class="n">autosize</span><span class="o">=</span><span class="n">true</span>        <span class="c1">#Autosize font / boxsize</span>
+<span class="n">sort_bins_by_count</span><span class="o">=</span><span class="n">false</span>
+<span class="n">show_bin_counts</span><span class="o">=</span><span class="n">true</span>      <span class="c1">#Show bincounts in [] after Bin labels</span>
+<span class="n">padding</span> <span class="o">=</span> <span class="mi">10</span>        <span class="c1">#Padding around entire legend</span>
+<span class="n">vspace</span> <span class="o">=</span> <span class="mi">4</span>          <span class="c1">#Vertical space between Bin text</span>
+<span class="n">hspace</span> <span class="o">=</span> <span class="mi">5</span>          <span class="c1">#Horizonal space between colored square and Bin text</span>
+<span class="n">font</span> <span class="o">=</span> <span class="s1">&#39;arial.ttf&#39;</span>  <span class="c1">#Legend Font</span>
+<span class="n">fontcolor</span> <span class="o">=</span> <span class="s1">&#39;#000000&#39;</span>
+<span class="n">overflow_text</span><span class="o">=</span><span class="s1">&#39;...More...&#39;</span>
+<span class="n">overflow_textcolor</span><span class="o">=</span><span class="s1">&#39;#00007F&#39;</span>
+
+<span class="c1"># Following 2 entries ignored if autosize=true</span>
+
+<span class="n">boxsize</span> <span class="o">=</span> <span class="mi">12</span>        <span class="c1">#Size of colored square</span>
+<span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span>
+
+<span class="c1"># --------------- Demo Section Group ---------------------</span>
+<span class="p">[</span><span class="n">demo</span><span class="p">]</span>
+<span class="c1"># random_diecount = true will create maps with a random</span>
+<span class="c1"># number of rows &amp; columns. (within min/max limits)</span>
+<span class="c1"># ALL WAFERS in lot will have the same counts</span>
+
+<span class="n">random_diecount</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># Same as above EXCEPT ALL WAFERS within a lot will have</span>
+<span class="c1"># random diecounts.</span>
+
+<span class="n">random_diecount_eachwafer</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="c1"># If BOTH the above are false, Demo map will always have</span>
+<span class="c1"># row &amp; col counts specified by the min/max values.</span>
+
+<span class="n">min_X</span><span class="o">=-</span><span class="mi">30</span>
+<span class="n">max_X</span><span class="o">=</span><span class="mi">30</span>
+<span class="n">min_Y</span><span class="o">=-</span><span class="mi">30</span>
+<span class="n">max_Y</span><span class="o">=</span><span class="mi">30</span>
+
+<span class="c1"># Minimum and Maximum Bin numbers to use.  ONLY valid for Demo</span>
+<span class="n">minbin</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">maxbin</span><span class="o">=</span><span class="mi">30</span>
+
+<span class="c1"># Default number of test sets in the demo map, this would</span>
+<span class="c1"># typically be changed by using the -t option with -d</span>
+<span class="c1"># (In demo mode -t SETS the number of testcounts)</span>
+
+<span class="n">testcount</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># If &quot;random_yield&quot; = true, then &quot;fixed_yield&quot; is</span>
+<span class="c1"># ignored and die yield will be random.  If it is false, then</span>
+<span class="c1"># wafer will yield at (or close to) the &quot;fixed_yield&quot; number</span>
+<span class="c1"># &quot;fixed_yield&quot;  can be a floating point or integer number</span>
+<span class="c1"># and is internally limited between  0.0 and 100.0</span>
+<span class="c1"># (numbers outside that range will be set to the nearest limit)</span>
+<span class="c1"># The -g option can be used to temporarily override the</span>
+<span class="c1"># random yield and set yield for that demo run</span>
+<span class="c1"># For more realistic demo yields, you can also set</span>
+<span class="c1"># &quot;minimum_yield&quot;</span>
+
+<span class="n">random_yield</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">fixed_yield</span> <span class="o">=</span> <span class="mf">78.6</span>
+<span class="n">minimum_yield</span> <span class="o">=</span> <span class="mf">60.0</span>
+
+
+<span class="c1"># --------------- BIN Section Group ---------------------</span>
+<span class="c1"># Specify Bin Label / Color combos.  If Bins NOT in this</span>
+<span class="c1"># list are encountered at runtime, they will be given</span>
+<span class="c1"># random colors and labels according to:</span>
+<span class="c1">#--------------------------</span>
+<span class="c1">#  1 - Demo mode - Both colors and Labels randomly assigned</span>
+<span class="c1">#  2 - STDF mode - Color randomly assigned, Bin Label set to &quot;-&quot;</span>
+<span class="c1">#--------------------------</span>
+<span class="c1"># The following bins are provided as a sample... bins are</span>
+<span class="c1"># best specified in part config files where you can</span>
+<span class="c1"># customize the bin labels for each part (unless of course you</span>
+<span class="c1"># always use the same bin labels for ALL parts.)</span>
+<span class="c1"># For each bin listed, color and label MUST be specified</span>
+<span class="c1"># although label can be blank (as in label=&#39;&#39;).</span>
+<span class="c1"># Symbol is optional and valid symbols are:</span>
+<span class="c1">#   dot</span>
+<span class="c1">#   dot3</span>
+<span class="c1">#   dash</span>
+<span class="c1">#   plus</span>
+<span class="c1">#   square</span>
+<span class="c1">#   diamond</span>
+<span class="c1">#   triangle</span>
+<span class="c1">#   cross</span>
+<span class="c1">#</span>
+<span class="c1"># Symbol modifiers are also optional as defaults are used, but</span>
+<span class="c1"># in most cases the defaults won&#39;t look very well as it&#39;s impossible</span>
+<span class="c1"># to have a &quot;one-size fits all&quot; default that works for all calculated</span>
+<span class="c1"># die sizes.  Valid modifiers are:</span>
+<span class="c1">#   shade - synonymous with &quot;color&quot;, but applies to the symbol</span>
+<span class="c1">#   scale - the size of the symbol, in general, you can think of this as:</span>
+<span class="c1">#         &quot;if you draw a square around the symbol, it&#39;s the percentage of</span>
+<span class="c1">#         die space it will take up&quot;</span>
+<span class="c1">#   width - line width in pixels - applies only to symbols drawn with lines</span>
+<span class="c1">#         (cross, dash, plus). Because the image routines do not support</span>
+<span class="c1">#         anti-aliasing, &quot;width&quot; often looks best with odd numbers (1, 3, 5, etc.)</span>
+<span class="c1">#   outline - 1-pixel outline color, applies only to symbols that get a</span>
+<span class="c1">#         color fill (dot, dot3, square, diamond, triangle).  Not for small die...</span>
+<span class="c1">#</span>
+<span class="c1"># Symbols in general will not work very with small die, experimentation is the</span>
+<span class="c1"># best way to get a look you are after for any specific die size. (However, you</span>
+<span class="c1"># can always increase the apparent die size by making the image bigger :-)</span>
+
+
+<span class="c1"># Some sample Bins with symbol definitions.  These are also provided in a</span>
+<span class="c1"># sample config file (symbols.toml)  so you can just do:</span>
+<span class="c1">#     stdf2map -c symbols lot3</span>
+<span class="c1"># to see the results of using them</span>
+
+<span class="p">[</span><span class="nb">bin</span><span class="p">]</span>
+<span class="c1">#1 = {color=&#39;#00FF00&#39;, label=&#39;Good Die&#39;}</span>
+<span class="c1">#2 = {color=&#39;#FF0000&#39;, label=&#39;Setup/Continuity&#39;, symbol=&#39;cross&#39;, shade=&#39;#FFFFFF&#39;, scale=0.75, width=3}</span>
+<span class="c1">#3 = {color=&#39;#009999&#39;, label=&#39;Leakage&#39;, symbol=&#39;dot&#39;, shade=&#39;#FFFFFF&#39;, scale=0.5}</span>
+<span class="c1">#4 = {color=&#39;#FEF102&#39;, label=&#39;Threshhold&#39;, symbol=&#39;dot3&#39;, shade=&#39;#FF0000&#39;, scale=0.25}</span>
+<span class="c1">#5 = {color=&#39;#CC6699&#39;, label=&#39;Resistance&#39;, symbol=&#39;plus&#39;, shade=&#39;#ffff00&#39;, scale=0.6}</span>
+<span class="c1">#7 = {color=&#39;#FFFFFF&#39;, label=&#39;Breakdown&#39;, symbol=&#39;plus&#39;, shade=&#39;#FF0000&#39;, scale=0.5, width=3 }</span>
+<span class="c1">#8 = {color=&#39;#00FF00&#39;, label=&#39;Statistical Failure&#39;, symbol=&#39;cross&#39;, shade=&#39;#ff0000&#39;, scale=1.0, width=2}</span>
+<span class="c1">#10 = {color=&#39;#0000FF&#39;, label=&#39;Capacitance&#39;, symbol=&#39;dash&#39;, shade=&#39;#FFFFFF&#39;, scale=0.65, width=3}</span>
+<span class="c1">#16 = {color=&#39;#BF6030&#39;, label=&#39;V/I Ramp Sense&#39;, symbol=&#39;square&#39;, shade=&#39;#000000&#39;, scale=0.5 }</span>
+<span class="c1">#17 = {color=&#39;#FF5500&#39;, label=&#39;Strobe Failure&#39;, symbol=&#39;dot&#39;, shade=&#39;#ffffff&#39;, scale=0.5, outline=&#39;#000000&#39;}</span>
+<span class="c1">#20 = {color=&#39;#009999&#39;, label=&#39;RAM CRC&#39;, symbol=&#39;diamond&#39;, shade=&#39;#ffff00&#39;, scale=0.6, outline=&#39;#000000&#39; }</span>
+
+<span class="c1">#Samples with no symbol definitions.</span>
+<span class="mi">0</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">}</span>
+<span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#00FF00&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Good Die -&quot;</span><span class="p">}</span>
+<span class="mi">2</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Setup/Continuity&quot;</span><span class="p">}</span>
+<span class="mi">3</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#009999&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Leakage&quot;</span><span class="p">}</span>
+<span class="mi">4</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FEF102&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Threshhold&quot;</span><span class="p">}</span>
+<span class="mi">5</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#3333CC&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Resistance&quot;</span><span class="p">}</span>
+<span class="mi">6</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#880000&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Timing&quot;</span><span class="p">}</span>
+<span class="mi">7</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Breakdown&quot;</span><span class="p">}</span>
+<span class="mi">8</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#990000&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Active Fail&quot;</span><span class="p">}</span>
+<span class="mi">9</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#BF6E11&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Passive Fail&quot;</span><span class="p">}</span>
+<span class="mi">10</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#0000FF&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capacitance&quot;</span><span class="p">}</span>
+<span class="mi">11</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#666666&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Self-Test&quot;</span><span class="p">}</span>
+<span class="mi">12</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#32CC99&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Conductance&quot;</span><span class="p">}</span>
+<span class="mi">13</span> <span class="o">=</span> <span class="p">{</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#8F3C2F&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unlucky&quot;</span><span class="p">}</span>
+
+<span class="c1">## EOF</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="demo.html" title="Demo Mode"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

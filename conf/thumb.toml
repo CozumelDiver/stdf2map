@@ -1,0 +1,36 @@
+# thumb.toml
+# Generate a small thumbnail, set image to a small size with
+# minimal padding and disable symbols, title, legend, axes, 
+# flagging, grid, timestamp, flat
+
+# NOTE: Autosizing will still be enabled by default.
+# If you "really want" the image to be "basewidth x baseheight"
+# in size, uncomment the autosize entry
+
+enable_symbols=false
+
+[image]
+padding=3
+basewidth=100
+baseheight=100
+border=true
+flatline=false
+timestamp=false
+
+#autosize=false
+
+[flag]
+show = false
+
+[axis]
+show = false
+grid = false
+
+[title]
+show=false
+
+[legend]
+show=false
+
+[file]
+thumb_mode=true

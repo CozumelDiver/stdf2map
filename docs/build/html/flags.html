@@ -1,0 +1,179 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Multiple Test Flagging &#8212; stdf2map 1.0b1 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0b1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Symbols" href="symbols.html" />
+    <link rel="prev" title="Optional Config Files" href="optconfig.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="symbols.html" title="Symbols"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="optconfig.html" title="Optional Config Files"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commandline.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mapviewer.html">Built-in Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optconfig.html">Optional Config Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Multiple Test Flagging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols.html">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defaultconfig.html">Default Config File</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="optconfig.html"
+                        title="previous chapter">Optional Config Files</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="symbols.html"
+                        title="next chapter">Symbols</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/flags.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/pageheader.png" src="_images/pageheader.png" />
+<style> .bluebold {color:#0000CC; background-color:#DDDDDD; font-weight:bold; text-align:center;} </style><div class="section" id="multiple-test-flagging">
+<span id="flags-label"></span><h1>Multiple Test Flagging<a class="headerlink" href="#multiple-test-flagging" title="Permalink to this headline">¶</a></h1>
+<p>If any duplicate <strong>PRR</strong> X_COORD / Y_COORD combinations are found <em>between</em> a <strong>WIR</strong> and corresponding <strong>WRR</strong>, a duplicate <strong>testset</strong> is created which is typically the result of retesting failed die.   These <strong>testsets</strong> are numbered 1,2,3 ... etc. in the order they are found in the STDF file.  By default, stdf2map will generate a map for each <strong>wafer</strong> <em>AND</em> <strong>testset</strong> combination found in an STDF file unless specific wafers and testsets are called for using the <strong>-w</strong> and <strong>-t</strong> command line options respectively.</p>
+<p>Wafers with multiple <strong>testsets</strong> will contain <strong>flags</strong> unless you specifically disable flagging with <strong>-f</strong> .  Both <strong>lot2</strong> and <strong>lot3</strong> in the sample STDF directory contain single wafers with multiple testsets.</p>
+<p>Flags show up as a colored triangle in the upper left corner of a die. and for any given die, the flag will be white if <strong>ALL</strong> testing on that die resulted in <strong>the same bin number</strong>.  It will be red if testing <strong>between any testset</strong> resulted in conflicting Bin numbers.</p>
+<p>Try:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -v lot2
+</pre></div>
+</div>
+<p>Two maps will be created and the viewer will show test set #1 by default</p>
+<p><span class="bluebold">TestSet #1</span></p>
+<img alt="_images/lot2-t1_flags.png" src="_images/lot2-t1_flags.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><span class="bluebold">TestSet #2</span></p>
+<img alt="_images/lot2-t2_flags.png" src="_images/lot2-t2_flags.png" />
+<p>So, for this particular wafer, they did indeed retest the failing die, and many of them passed the second time around</p>
+<p>Both the flag size and color are configurable in <strong>stdf2map.config</strong>.  Below are the default configuration settings dealing with flags:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># --------------- Fiag Section Group ---------------------</span>
+<span class="p">[</span><span class="n">flag</span><span class="p">]</span>
+<span class="n">show</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="c1"># Flag color if Bin results the SAME for all test sets</span>
+<span class="n">duplicate_color</span> <span class="o">=</span> <span class="s1">&#39;#FFFFFF&#39;</span>
+
+<span class="c1"># Flag color if Bin results DIFFERENT across test sets</span>
+<span class="n">split_color</span> <span class="o">=</span> <span class="s1">&#39;#FF0000&#39;</span>
+
+<span class="c1"># size of flag as a ratio of diesize</span>
+<span class="c1"># flagsize = diesize/size_factor.</span>
+<span class="c1"># (i.e. smaller numbers = bigger flag)</span>
+<span class="c1"># Typically you would want a slightly smaller number</span>
+<span class="c1"># for smaller die to increase the apparent flag size.</span>
+<span class="c1"># A number of 1.0 would divide the die in half</span>
+<span class="c1"># corner to corner (Use a minimum of 1.0)</span>
+
+<span class="n">size_factor</span> <span class="o">=</span> <span class="mf">2.5</span>
+</pre></div>
+</div>
+<p>Flag <em>size_factor</em> is something you will likely want to set in a part-based configuration file, as the relative size needs to be increased with smaller die for the flag to be visible.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Flagging can be disabled with the <strong>-f</strong> command line option and you can select a specific <strong>testset</strong> with the <strong>-t</strong> option, for example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ stdf2map -v -f -t2 lot2
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><span class="bluebold">TestSet #2</span></p>
+<img alt="_images/lot2-t2_noflags.png" src="_images/lot2-t2_noflags.png" />
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="symbols.html" title="Symbols"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="optconfig.html" title="Optional Config Files"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">stdf2map 1.0b1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, D. Fish.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+[bin]
+
+1 = {color='#00FF00', label='Good Die'}
+2 = {color='#FF0000', label='Setup/Continuity', symbol='cross', shade='#FFFFFF', scale=0.75, width=3}
+3 = {color='#009999', label='Leakage', symbol='dot', shade='#FFFFFF', scale=0.5}
+4 = {color='#FEF102', label='Threshhold', symbol='dot3', shade='#FF0000', scale=0.25}
+5 = {color='#CC6699', label='Resistance', symbol='plus', shade='#ffff00', scale=0.6}
+7 = {color='#FFFFFF', label='Breakdown', symbol='plus', shade='#FF0000', scale=0.5, width=3 }
+8 = {color='#00FF00', label='Statistical Failure', symbol='cross', shade='#ff0000', scale=1.0, width=2}
+10 = {color='#0000FF', label='Capacitance', symbol='dash', shade='#FFFFFF', scale=0.65, width=3}
+16 = {color='#BF6030', label='V/I Ramp Sense', symbol='triangle', shade='#FF0000', scale=0.5, outline='#000000' }
+17 = {color='#FF5500', label='Strobe Failure', symbol='dot', shade='#ffffff', scale=0.5, outline='#000000'}
+20 = {color='#009999', label='RAM CRC', symbol='diamond', shade='#ffff00', scale=0.6, outline='#000000' }

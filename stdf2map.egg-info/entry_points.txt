@@ -1,0 +1,3 @@
+[console_scripts]
+stdf2map = stdf2map.stdf2map:main
+
