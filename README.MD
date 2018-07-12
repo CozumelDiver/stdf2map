@@ -113,42 +113,32 @@ sample wafer maps created by this application. If these look promising,
 feel free to explore the rest of the documentation and test out the
 application on your own data.
 
-| 
 
-![image](docs/source/images/a595-thumb.png){.align-center}
+![image](docs/source/images/a595-thumb.png)
+ 
 
-| 
+![image](docs/source/images/a595-thumb1.png)
+ 
 
-![image](docs/source/images/a595-thumb1.png){.align-center}
+![image](docs/source/images/a595-09.png)
+ 
 
-| 
+![image](docs/source/images/demo2.png)
+ 
 
-![image](docs/source/images/a595-09.png){.align-center}
+![image](docs/source/images/demo3.png)
+ 
 
-| 
+![image](docs/source/images/a595-theme_light.png)
+ 
 
-![image](docs/source/images/demo2.png){.align-center}
+![image](docs/source/images/a595-theme_dark.png)
+ 
 
-| 
+![image](docs/source/images/lot2-t1_flags.png)
+ 
 
-![image](docs/source/images/demo3.png){.align-center}
+![image](docs/source/images/lot2-t2_noflags.png)
+ 
 
-| 
-
-![image](docs/source/images/a595-theme_light.png){.align-center}
-
-| 
-
-![image](docs/source/images/a595-theme_dark.png){.align-center}
-
-| 
-
-![image](docs/source/images/lot2-t1_flags.png){.align-center}
-
-| 
-
-![image](docs/source/images/lot2-t2_noflags.png){.align-center}
-
-| 
-
-![image](docs/source/images/lot3-symbols.png){.align-center}
+![image](docs/source/images/lot3-symbols.png)
